@@ -81,4 +81,23 @@ class ApplicationController < Sinatra::Base
     ).to_json
   end
 
+  delete '/animals/:id' do
+    animal = Animal.find(params[:id])
+    animal.destroy
+    animal.to_json
+  end
+
+  
+  delete '/shelters/:id' do
+    shelter = Shelter.find(params[:id])
+    shelter.destroy
+    shelter.to_json
+  end
+
+  delete '/applications/:id' do
+    application = AdoptionApplication.find(params[:id])
+    application.destroy
+    application.to_json
+  end
+
 end
