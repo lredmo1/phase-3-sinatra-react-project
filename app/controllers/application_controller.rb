@@ -37,7 +37,8 @@ class ApplicationController < Sinatra::Base
 
   patch "/animals/:id" do
     shelter = Shelter.find_by_name(params[:shelter]).id
-    animal = Animal.find(params[:id]).update(
+    animal = Animal.find(params[:id])
+    animal.update(
       name: params[:name],
       animal_type: params[:animal_type],
       breed: params[:breed],
@@ -59,7 +60,8 @@ class ApplicationController < Sinatra::Base
 
   patch "/applications/:id" do
     animal = Animal.find_by_name(params[:animal_name]).id
-    application = AdoptionApplication.find(params[:id]).update(
+    application = AdoptionApplication.find(params[:id])
+    application.update(
       name: params[:name],
       date: params[:date],
       animal_id: animal
@@ -75,10 +77,12 @@ class ApplicationController < Sinatra::Base
   end
 
   patch "/shelters/:id" do
-    Shelter.find(params[:id]).update(
+    shelter = Shelter.find(params[:id])
+    shelter.update(
       name: params[:name],
       address: params[:address]
-    ).to_json
+    )
+    shelter.to_json
   end
 
   delete '/animals/:id' do
@@ -87,7 +91,6 @@ class ApplicationController < Sinatra::Base
     animal.to_json
   end
 
-  
   delete '/shelters/:id' do
     shelter = Shelter.find(params[:id])
     shelter.destroy
