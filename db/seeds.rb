@@ -95,8 +95,8 @@ puts "🐩 Creating animals..."
     Animal.create(
         name: Faker::Creature::Cat.name, 
         animal_type: "cat", 
-        breed: Faker::Creature::Cat.breed, 
-        img_url: Faker::LoremFlickr.image(size: "150x160", search_terms: ['cat', 'cute'], match_all: true),
+        breed: "Selkirk Rex", 
+        img_url: "https://pix.avax.news/avaxnews/13/0d/00020d13_medium.jpeg",
         shelter_id: Shelter.all.sample.id
     )
     Animal.create(
@@ -124,7 +124,7 @@ puts "🐩 Creating animals..."
         name: "Winnie", 
         animal_type: "dog", 
         breed: "Bernedoodle", 
-        img_url: "./db/IMG_0015.jpeg",
+        img_url: "https://i.imgur.com/IYay0B1.jpg",
         shelter_id: Shelter.all.sample.id
     )
     Animal.create(
