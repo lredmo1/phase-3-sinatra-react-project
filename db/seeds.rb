@@ -5,13 +5,15 @@ Animal.destroy_all
 AdoptionApplication.destroy_all
 
 puts "🏞️ Creating shelters..."
-Shelter.create(name: "Ironbarrow", address: Faker::Address.full_address)
-Shelter.create(name: "Marblewald", address: Faker::Address.full_address)
-Shelter.create(name: "Bluemeadow", address: Faker::Address.full_address)
-Shelter.create(name: "Mallowpond", address: Faker::Address.full_address)
-Shelter.create(name: "Brookville", address: Faker::Address.full_address)
-Shelter.create(name: "Clearcourt", address: Faker::Address.full_address)
-Shelter.create(name: "Flowerlake", address: Faker::Address.full_address)
+Shelter.create(name: "Animal Haven", address: Faker::Address.full_address)
+Shelter.create(name: "Lucky Paws", address: Faker::Address.full_address)
+Shelter.create(name: "Loved Pet Shelter", address: Faker::Address.full_address)
+Shelter.create(name: "Homey Pet Shelter", address: Faker::Address.full_address)
+Shelter.create(name: "Helping Hands", address: Faker::Address.full_address)
+Shelter.create(name: "Pound Society", address: Faker::Address.full_address)
+Shelter.create(name: "Zoo City", address: Faker::Address.full_address)
+Shelter.create(name: "Wags & Whiskers", address: Faker::Address.full_address)
+Shelter.create(name: "Paws ‘N’ Play", address: Faker::Address.full_address)
 
 
 puts "🐩 Creating animals..."
@@ -114,17 +116,10 @@ puts "🐩 Creating animals..."
         shelter_id: Shelter.all.sample.id
     )
     Animal.create(
-        name: Faker::Creature::Dog.name, 
-        animal_type: "dog", 
-        breed: "Chow Chow", 
-        img_url: "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F47%2F2021%2F05%2F20%2Fchow-chow-laying-puppy-208698697-2000.jpg",
-        shelter_id: Shelter.all.sample.id
-    )
-    Animal.create(
         name: "Winnie", 
         animal_type: "dog", 
         breed: "Bernedoodle", 
-        img_url: "https://i.imgur.com/IYay0B1.jpg",
+        img_url: "https://i.imgur.com/UC1lFJx.jpg",
         shelter_id: Shelter.all.sample.id
     )
     Animal.create(
@@ -134,9 +129,58 @@ puts "🐩 Creating animals..."
         img_url: "https://media.kidadl.com/medium_6082cf9f3a146281ff58e8cb_here_are_chantilly_tiffany_cat_facts_about_this_fluffy_feline_cf896cf564.jpg",
         shelter_id: Shelter.all.sample.id
     )
+    Animal.create(
+        name: Faker::Creature::Dog.name, 
+        animal_type: "dog", 
+        breed: "Pit Bull Terrier", 
+        img_url: "https://img.dog-learn.com/dog-breeds/american-pit-bull-terrier/pitbull-i5-sz5.jpg",
+        shelter_id: Shelter.all.sample.id
+    )
+    Animal.create(
+        name: Faker::Creature::Cat.name, 
+        animal_type: "cat", 
+        breed: "Siamese", 
+        img_url: "https://lolcats.com/wp-content/uploads/2021/08/siamese-scaled.jpg",
+        shelter_id: Shelter.all.sample.id
+    )
+    Animal.create(
+        name: Faker::Creature::Dog.name, 
+        animal_type: "dog", 
+        breed: "Samoyed", 
+        img_url: "https://www.rover.com/blog/wp-content/uploads/2019/11/samoyed-puppy-in-grass.jpg",
+        shelter_id: Shelter.all.sample.id
+    )
+    Animal.create(
+        name: Faker::Creature::Cat.name, 
+        animal_type: "cat", 
+        breed: "Maine Coon", 
+        img_url: "https://ichef.bbci.co.uk/news/976/cpsprodpb/13603/production/_115236397_capture_cat2.jpg",
+        shelter_id: Shelter.all.sample.id
+    )
+    Animal.create(
+        name: Faker::Creature::Dog.name, 
+        animal_type: "dog", 
+        breed: "Chihuahua", 
+        img_url: "https://media-be.chewy.com/wp-content/uploads/2021/04/20144004/Chihuahua_Feature-Image.jpg",
+        shelter_id: Shelter.all.sample.id
+    )
+    Animal.create(
+        name: Faker::Creature::Cat.name, 
+        animal_type: "cat", 
+        breed: "Scottish Fold", 
+        img_url: "https://www.petfirst.com/wp-content/uploads/2019/07/shutterstock_130389866-1200x800.jpg",
+        shelter_id: Shelter.all.sample.id
+    )
+    Animal.create(
+        name: Faker::Creature::Dog.name, 
+        animal_type: "dog", 
+        breed: "Pembroke Welsh Corgi", 
+        img_url: "https://www.rover.com/blog/wp-content/uploads/2019/01/6342530545_45ec8696c8_b.jpgaying-puppy-208698697-2000.jpg",
+        shelter_id: Shelter.all.sample.id
+    )
 
 puts "📝 Creating adoption applications..."
-20.times do 
+40.times do 
     AdoptionApplication.create(
         name: Faker::Name.name, 
         date: Faker::Date.backward(days: 30), 
