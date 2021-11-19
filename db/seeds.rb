@@ -175,10 +175,16 @@ puts "🐩 Creating animals..."
         name: Faker::Creature::Dog.name, 
         animal_type: "dog", 
         breed: "Pembroke Welsh Corgi", 
-        img_url: "https://www.rover.com/blog/wp-content/uploads/2019/01/6342530545_45ec8696c8_b.jpgaying-puppy-208698697-2000.jpg",
+        img_url: "https://www.akc.org/wp-content/uploads/2017/11/Pembroke-Welsh-Corgi-standing-outdoors-in-the-fall.jpg",
         shelter_id: Shelter.all.sample.id
     )
-
+    Animal.create(
+        name: Faker::Creature::Cat.name, 
+        animal_type: "cat", 
+        breed: "Savannah", 
+        img_url: "https://i.redd.it/b6b8y8ytyws31.jpg",
+        shelter_id: Shelter.all.sample.id
+    )
 puts "📝 Creating adoption applications..."
 40.times do 
     AdoptionApplication.create(
