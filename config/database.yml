@@ -1,16 +1,28 @@
-default: &default
-  adapter: sqlite3
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  timeout: 5000
-
 development:
-  <<: *default
-  database: db/development.sqlite3
-
-test:
-  <<: *default
-  database: db/test.sqlite3
-
+  adapter: postgresql
+  encoding: unicode
+  database: development
+  pool: 2
 production:
-  <<: *default
-  database: db/production.sqlite3
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  host: <%= ENV ['DATABASE_HOST' %>]
+  database: production 
+
+# default: &default
+#   adapter: sqlite3
+#   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+#   timeout: 5000
+
+# development:
+#   <<: *default
+#   database: db/development.sqlite3
+
+# test:
+#   <<: *default
+#   database: db/test.sqlite3
+
+# production:
+#   <<: *default
+#   database: db/production.sqlite3
